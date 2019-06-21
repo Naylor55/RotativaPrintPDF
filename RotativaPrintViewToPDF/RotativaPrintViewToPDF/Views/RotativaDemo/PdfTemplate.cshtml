@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+@using RotativaPrintViewToPDF.Models
+@model OrderModel
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        PDF内容：
+        <br />
+        <span>订单编号</span>   @Model.orderId
+        <br />
+        <span>订单地址</span>   @Model.orderAddress 
+        <br />
+        <span>订单备注</span>   @Model.orderRemark
+    </div>
+</body>
+</html>
