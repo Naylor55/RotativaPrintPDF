@@ -24,7 +24,7 @@
 ## 使用方法
 
 * 引入Rotativa.dll   ，  将Rotativa需要的插件放到根目录的Rotativa文件夹中。
-* RotativaDemoController中的DownloadPDF这个action 为和业务交互的Actin，由业务方调用，DownloadPDF再调用实际需要打印和下载的视图PdfTemplate，具体的内容再PdfTemplate中生成。
+* RotativaDemoController中的DownloadPDF这个action 为和业务交互的Action，由业务方调用，DownloadPDF再调用实际需要打印和下载的视图PdfTemplate，具体的内容在PdfTemplate中生成。
 * 需要注意的是  return new Rotativa.RouteAsPdf("Pdf", new { orderId = orderId }) { FileName = "pdfFileName.pdf" };   实际上是发起了一个对PdfTemplate这个Action 的一个请求，所以在DownloadPDF中可以获取到客户端浏览器的Cookie信息，而在PdfTemplate中确不可以。
 * 同理，若在PdfTemplate中需要返回给View 的  model  中需要当前登录的sessin 中的信息的时候，需要提前在DownloadPDF中获取，以请求参数的形式传递到PdfTemplate中。
 * 我尝试过在DownloadPDF中获取所有我需要在PdfTemplate视图中显示的内容，组装成一个实体对象，然后序列化为字符串传递给PdfTemplate， 可是失败了，提示找不到该路由。
